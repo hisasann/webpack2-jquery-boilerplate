@@ -1,0 +1,6 @@
+@import "../partial/border";
+
+header {
+  @include border(red);
+  color: black;
+}
