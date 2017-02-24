@@ -11,7 +11,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hisasann/webpack2-jquery-bilerplate.git"
+    "url": "git+https://github.com/hisasann/webpack2-jquery-boilerplate.git"
   },
   "author": {
     "name": "hisasann",
@@ -24,6 +24,7 @@
     "babel-loader": "^6.3.2",
     "babel-polyfill": "^6.23.0",
     "babel-preset-es2015": "^6.22.0",
+    "babel-preset-stage-0": "^6.22.0",
     "clean-webpack-plugin": "^0.1.15",
     "cross-env": "^3.1.4",
     "css-loader": "^0.26.1",
@@ -48,7 +49,8 @@
   },
   "dependencies": {
     "jquery": "^3.1.1",
-    "lodash": "^4.17.4"
+    "lodash": "^4.17.4",
+    "superagent": "^3.4.4"
   },
   "devEngines": {
     "node": "6.x",
