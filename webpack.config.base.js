@@ -19,14 +19,13 @@ export default {
     publicPath: '/'
   },
   module: {
-    loaders: [{
-      test: /\.jsx?$/,
-      loaders: ['babel-loader'],
-      exclude: /node_modules/
-    }, {
-      test: /\.json$/,
-      loader: 'json-loader'
-    }]
+    rules: [
+      {
+        test: /\.jsx?$/,
+        use: ['babel-loader'],
+        exclude: /node_modules/
+      }
+    ]
   },
   resolve: {
     extensions: ['.js', '.jsx', '.scss']

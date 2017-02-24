@@ -28,14 +28,12 @@ export default merge(baseConfig, {
       },
       {
         test: /\.ejs$/,
-        loader: 'ejs-loader'
+        use: 'ejs-loader'
       }
     ]
   },
 
   plugins: [
-    new webpack.optimize.OccurrenceOrderPlugin(),
-
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production')
     }),
