@@ -49,19 +49,6 @@ $ npm run lint
 ```
 
 
-## Externals
-
-If you use any 3rd party libraries which can't be built with webpack, you must list them in your `webpack.config.base.js`：
-
-```javascript
-externals: [
-  // put your node 3rd party libraries which can't be built with webpack here (mysql, mongodb, and so on..)
-]
-```
-
-You can find those lines in the file.
-
-
 ## Maintainers
 
 - [hisasann](https://github.com/hisasann)
