@@ -1,7 +1,6 @@
 export default {
   index: {
     js: [
-      // 'babel-polyfill',
       './app/javascripts/index'
     ],
     template: 'index'
