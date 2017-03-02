@@ -1,7 +1,4 @@
-import path from 'path';
 import webpack from 'webpack';
-// import validate from 'webpack-validator';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
 import CleanWebpackPlugin from 'clean-webpack-plugin';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import merge from 'webpack-merge';
@@ -9,29 +6,6 @@ import baseConfig from './webpack.config.base';
 
 export default merge(baseConfig, {
   devtool: 'cheap-module-source-map',
-
-  module: {
-    rules: [
-      {
-        test: /\.css$/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: 'css-loader'
-        })
-      },
-      {
-        test: /\.scss$/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: 'css-loader!sass-loader'
-        })
-      },
-      {
-        test: /\.ejs$/,
-        use: 'ejs-loader'
-      }
-    ]
-  },
 
   plugins: [
     new webpack.DefinePlugin({

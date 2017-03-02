@@ -1,6 +1,7 @@
 import path from 'path';
 import webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import entryPoints from './webpack.config.entrypoints';
 
 let entryPointsToWebpack = {};
@@ -20,15 +21,44 @@ export default {
   },
   module: {
     rules: [
+      // js
       {
         test: /\.jsx?$/,
         use: ['babel-loader'],
         exclude: /node_modules/
+      },
+
+      // css
+      {
+        test: /\.css$/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: 'css-loader?url=false'
+        })
+      },
+
+      // scss
+      {
+        test: /\.scss$/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: 'css-loader?url=false!sass-loader'
+        })
+      },
+
+      // ejs
+      {
+        test: /\.ejs$/,
+        use: 'ejs-loader'
       }
+
     ]
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.scss']
+    extensions: ['.js', '.jsx', '.scss'],
+    alias: {
+      'handlebars' : 'handlebars/dist/handlebars.js'
+    }
   },
   plugins: [
     new webpack.optimize.CommonsChunkPlugin({
@@ -50,6 +80,9 @@ export default {
     }).concat([
     ])
   ],
+  node: {
+    fs: "empty"
+  },
   externals: [
     // put your node 3rd party libraries which can't be built with webpack here
     // (mysql, mongodb, and so on..)
