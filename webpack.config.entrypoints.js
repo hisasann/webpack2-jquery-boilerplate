@@ -9,8 +9,8 @@ export default {
     js: './app/javascripts/hoge',
     template: 'hoge'
   },
-  foo: {
-    js: './app/javascripts/foo',
+  'hoge.foo': {
+    js: './app/javascripts/hoge.foo',
     template: 'hoge.foo'
   }
 };

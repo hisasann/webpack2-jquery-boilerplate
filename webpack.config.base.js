@@ -65,6 +65,28 @@ export default {
       names: ['vendor']
     }),
 
+    new webpack.ProvidePlugin({
+      // jQuery
+      $: 'jquery',
+      jQuery: 'jquery',
+      'window.jQuery': 'jquery',
+      'root.jQuery': 'jquery',
+
+      // lodash
+      '_': 'lodash'
+    }),
+
+    new webpack.ProvidePlugin({
+      // jQuery
+      $: 'jquery',
+      jQuery: 'jquery',
+      'window.jQuery': 'jquery',
+      'root.jQuery': 'jquery',
+
+      // lodash
+      '_': 'lodash'
+    }),
+
     ...Object.keys(entryPoints).map(function (id) {
       let templatePath = entryPoints[id].template;
       let distPath = (id === 'index') ? 'index' : templatePath.replace(/\./g, '/') + '/index';
